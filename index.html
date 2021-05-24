@@ -58,13 +58,24 @@ button{
   -moz-transition: ease-out 0.4s;
   transition: ease-out 0.4s;
 }
+figcaption {
+  font-family: "Itim", serif;
+  font-size: 20px;
+  color: #4d4d4d;
+}
+#box {
+      border-radius: 25px;
+      padding: 10px;
+      background: rgba(255, 252, 98, 0.884);
+      opacity: 1;
+    }
+
 p {
   font-family: "Itim", serif;
-  font-size: 22px;
+  font-size: 23px;
   text-align: center;
-  color: #fcc223;
-  text-shadow: -1px 0 rgb(0, 0, 0), 0 1px black,
-      1px 0 black, 0 -1px black
+  color: rgb(243, 219, 4);
+  text-shadow: -1px 0 rgb(0, 0, 0), 0 1px black,1px 0 black, 0 -1px black
 }
 
 hds{
@@ -98,20 +109,19 @@ hds{
           <br><br>
           <hds>How to Play</hds>
           <p>คุณคือจอมยุทธ์!!! ผู้มีจิตใจดีงามที่จะช่วยเหลือผู้คนในหมู่บ้านที่หิวโหย คุณนั้นต้องการพลังพลังหาได้จากการกิน คุณจึงต้องเข้าป่าไปเพื่อเติมพลังของคุณและนำอาหารที่หามาได้กลับไปช่วยเหลือคนในหมู่บ้าน ไม่ให้อดอยากนั่นเอง</p>
-          <p style=" text-decoration: underline; text-decoration-color:crimson;">อาหารที่คุณหาได้ในป่า</p>
+          <p style="text-decoration: underline; text-decoration-color:rgb(255, 240, 104);">อาหารที่คุณหาได้ในป่า</p>
           <div id="food">
             <figure>
               <p><img src="https://cdn.discordapp.com/attachments/786852021315305473/823554666125983784/Meat_1.gif"
                 width="150" height="150">
-              <figcaption>เนื้อสัตว์</figcaption>
+              <figcaption id="box">เนื้อสัตว์</figcaption>
               </figure>
               <figure>
               <p><img src="https://cdn.discordapp.com/attachments/786852021315305473/823580071829962823/MiniTree_1.gif"
                 width="150" height="150">
-              <figcaption>พืชผัก</figcaption>
+              <figcaption id="box">พืชผัก</figcaption>
             </figure>
           </div>
-          <br>
           <button onclick="goMain()">MainMenu</button>
           <br><br>
           <button onclick="howToPlay2()">></button>
@@ -121,17 +131,17 @@ hds{
           <br>
           <hds id="headhowto">How to Play</hds>
           <p>แน่นอนว่าป่าผืนนี้ไม่ได้โรยด้วยกลีบกุหลาบ ขึ้นชื่อว่าป่าแน่นอนว่าคุณจะต้องพบกับสัตว์ร้าย แต่ไม่ต้องห่วงหากคุณไม่ทำอะไรกับมันเรื่องร้ายคงไม่เกิด ภัยร้ายอีกนึงอย่างคือ Virus ที่จะทำให้จอมยุทธ์อ่อนแรงลง ขอให้คุณเดินทางอย่างปลอดภัยท่านจอมยุทธ์</p>
-          <p style="text-decoration: underline; text-decoration-color:crimson;">ภัยร้ายต่างๆ</p>
+          <p style="text-decoration: underline; text-decoration-color:rgb(255, 240, 104);">ภัยร้ายต่างๆ</p>
           <div id="food">
             <figure>
               <p><img src="https://cdn.discordapp.com/attachments/820894723119644672/823845422165393468/Tiger_1.gif"
                 width="150" height="150">
-              <figcaption>เสือ</figcaption>
+              <figcaption id="box">เสือ</figcaption>
               </figure>
               <figure>
               <p><img src="https://cdn.discordapp.com/attachments/796972397391511556/838459515124056134/New_Virus_clone.gif"
                 width="150" height="150">
-              <figcaption>Virus</figcaption>
+              <figcaption id="box">Virus</figcaption>
             </figure>
           </div>
           <button onclick="goMain()">MainMenu</button>
