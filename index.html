@@ -4,17 +4,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Itim">
         <link href="https://fonts.googleapis.com/css2?family=Thasadith&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Srisakdi:wght@700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
-    
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
         <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/games/gam-10/gam987.ani), url(https://cur.cursors-4u.net/games/gam-10/gam987.png), auto;}</style><a href="https://www.cursors-4u.com/cursor/2009/06/02/animated-dragonica-star-glove-pointer.html" target="_blank" title="Animated Dragonica Star Glove Pointer"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Animated Dragonica Star Glove Pointer" style="position:absolute; top: 0px; right: 0px;" /></a>
     <style>
-      
 body{
-  
   display:flex;
   justify-content: center;
   background: url(https://cdn.discordapp.com/attachments/796972397391511556/846280756840890388/sun-ju-park-2015-09-07.gif);
@@ -39,13 +36,10 @@ interface {
   hsla(92, 62%, 72%, 0.9),hsla(73, 72%, 75%, 0.90));
   font-family: "Itim", serif;
 }
-button:hover {
-  box-shadow: inset 400px 0 0 0 #ff9035;
-}
 button{
   color: rgb(92, 92, 92);
   border: 3px solid #fd643e;
-  border-radius: 0px;
+  border-radius: 5px;
   padding: 18px 36px;
   display: inline-block;
   font-family: "Itim", serif;
@@ -57,6 +51,9 @@ button{
   -webkit-transition: ease-out 0.4s;
   -moz-transition: ease-out 0.4s;
   transition: ease-out 0.4s;
+}
+button:hover {
+  box-shadow: inset 400px 0 0 0 #ff9035;
 }
 figcaption {
   font-family: "Itim", serif;
@@ -90,6 +87,20 @@ hds{
   justify-content: center;
   text-align: center;
 }
+#stats, #canvas, #dshowto, #dshowto2, #goodend-page, #badend-page, #killed{
+  display: none;
+}
+@keyframes moving {
+  from {top:100px;}
+  to {top:0px;}
+}
+#tips{
+  width:300px;
+  /* background: white; */
+  text-align: center;
+  color: white
+
+}
         </style>
     </head>
     <body onload="display()">
@@ -98,29 +109,29 @@ hds{
             <hds >เทพยุทธ์สุดจะคิดได้</hds><br><br>
             <img  src="https://cdn.discordapp.com/attachments/820894723119644672/823820115678068746/Hero_clone_2.gif" style="width: 300px;; height: 300px;;"><br><br><br><br><br>
             <button onclick="startGame()"><img src="https://cdn.discordapp.com/attachments/786852021315305473/823554666125983784/Meat_1.gif"
-              width="17" height="17" style="vertical-align:middle">START<img src="https://cdn.discordapp.com/attachments/786852021315305473/823554666125983784/Meat_1.gif"
-              width="17" height="17" style="vertical-align:middle"></button><br><br>
-            <button onclick="howToPlay()"><img src="https://cdn.discordapp.com/attachments/786852021315305473/823580071829962823/MiniTree_1.gif"
-              width="17" height="17" style="vertical-align:middle">How to play<img src="https://cdn.discordapp.com/attachments/786852021315305473/823580071829962823/MiniTree_1.gif"
-              width="17" height="17" style="vertical-align:middle"></button>
+                width="17" height="17" style="vertical-align:middle">START<img src="https://cdn.discordapp.com/attachments/786852021315305473/823554666125983784/Meat_1.gif"
+                width="17" height="17" style="vertical-align:middle"></button><br><br>
+                <button onclick="howToPlay()"><img src="https://cdn.discordapp.com/attachments/786852021315305473/823580071829962823/MiniTree_1.gif"
+                    width="17" height="17" style="vertical-align:middle">How to play<img src="https://cdn.discordapp.com/attachments/786852021315305473/823580071829962823/MiniTree_1.gif"
+                    width="17" height="17" style="vertical-align:middle"></button>
         </interface>
 
         <interface id="dshowto">
-          <br>
+          <br><br>
           <hds>How to Play</hds>
           <p>คุณคือจอมยุทธ์!!! ผู้มีจิตใจดีงามที่จะช่วยเหลือผู้คนในหมู่บ้านที่หิวโหย คุณนั้นต้องการพลังพลังหาได้จากการกิน คุณจึงต้องเข้าป่าไปเพื่อเติมพลังของคุณและนำอาหารที่หามาได้กลับไปช่วยเหลือคนในหมู่บ้าน ไม่ให้อดอยากนั่นเอง</p>
           <p style="text-decoration: underline; text-decoration-color:rgb(255, 240, 104);">อาหารที่คุณหาได้ในป่า</p>
           <div id="food">
             <figure>
-              <p><img src="https://cdn.discordapp.com/attachments/786852021315305473/823554666125983784/Meat_1.gif"
-                width="150" height="150">
-              <figcaption id="box">เนื้อสัตว์</figcaption>
+                <p><img src="https://cdn.discordapp.com/attachments/786852021315305473/823554666125983784/Meat_1.gif"
+                  width="150" height="150">
+                <figcaption id="box">เนื้อสัตว์</figcaption>
+                </figure>
+                <figure>
+                <p><img src="https://cdn.discordapp.com/attachments/786852021315305473/823580071829962823/MiniTree_1.gif"
+                  width="150" height="150">
+                <figcaption id="box">พืชผัก</figcaption>
               </figure>
-              <figure>
-              <p><img src="https://cdn.discordapp.com/attachments/786852021315305473/823580071829962823/MiniTree_1.gif"
-                width="150" height="150">
-              <figcaption id="box">พืชผัก</figcaption>
-            </figure>
           </div>
           <button onclick="goMain()">MainMenu</button>
           <br><br>
@@ -128,37 +139,63 @@ hds{
         </interface>
 
         <interface id="dshowto2">
-          <br>
+          <br><br>
           <hds id="headhowto">How to Play</hds>
           <p>แน่นอนว่าป่าผืนนี้ไม่ได้โรยด้วยกลีบกุหลาบ ขึ้นชื่อว่าป่าแน่นอนว่าคุณจะต้องพบกับสัตว์ร้าย แต่ไม่ต้องห่วงหากคุณไม่ทำอะไรกับมันเรื่องร้ายคงไม่เกิด ภัยร้ายอีกนึงอย่างคือ Virus ที่จะทำให้จอมยุทธ์อ่อนแรงลง ขอให้คุณเดินทางอย่างปลอดภัยท่านจอมยุทธ์</p>
           <p style="text-decoration: underline; text-decoration-color:rgb(255, 240, 104);">ภัยร้ายต่างๆ</p>
           <div id="food">
             <figure>
-              <p><img src="https://cdn.discordapp.com/attachments/820894723119644672/823845422165393468/Tiger_1.gif"
-                width="150" height="150">
-              <figcaption id="box">เสือ</figcaption>
+                <p><img src="https://cdn.discordapp.com/attachments/820894723119644672/823845422165393468/Tiger_1.gif"
+                  width="150" height="150">
+                <figcaption id="box">เสือ</figcaption>
+                </figure>
+                <figure>
+                <p><img src="https://cdn.discordapp.com/attachments/796972397391511556/838459515124056134/New_Virus_clone.gif"
+                  width="150" height="150">
+                <figcaption id="box">Virus</figcaption>
               </figure>
-              <figure>
-              <p><img src="https://cdn.discordapp.com/attachments/796972397391511556/838459515124056134/New_Virus_clone.gif"
-                width="150" height="150">
-              <figcaption id="box">Virus</figcaption>
             </figure>
           </div>
           <button onclick="goMain()">MainMenu</button>
           <br><br>
           <button onclick="howToPlay()"><</button>
         </interface>
+
+        <interface id="goodend-page">
+          <hds>Endding</hds>
+          <a class="button" href="https://meat-industry.netlify.app/">Endding</a>
+        </interface>
+
+        <interface id="badend-page">
+          <a class="button" href="https://meat-industry1.netlify.app/">Endding</a>
+        </interface>
+
+        <interface id="killed"><br>
+          <hds>Die</hds><br>
+          <h1>Try Again?</h1><br><br>
+          <button onclick="startGame()">Yes</button>
+          <a href="https://meat-industry.netlify.app/"><button>No</button></a>
+          <img src="" alt="">
+        </interface>
+
         <canvas id="canvas"></canvas>
-        <div id="stats" style="background: white;">
-          <div id="progbar" style="width:200px; background: #ddd">
-            <div id="myprog" style="width:0%; height:30px; background:#04AA6D"></div>
+        <div id="stats" style="padding: 10px; background-image: radial-gradient(circle, hsl(25, 34%, 40%), hsl(25, 27%, 52%), hsl(25, 34%, 40%)); height: 350px; margin:10px; border: 10px solid pink;border-image: repeating-linear-gradient( 45deg, green, hsl(76, 57%, 51%) 1%, hsl(24, 60%, 23%) 1%, hsl(25, 34%, 39%) 8%) 10;font-family: 'Amatic SC', cursive; font-size:large;color:white;">
+          <div id="progbar" style="width:300px; background: black">
+            <div id="myprog" style="width:0%; height:30px; background-image: linear-gradient(hsl(80, 100%, 62%), hsl(90, 100%, 49%), hsl(80, 100%, 62%));"></div>
           </div>
           <h1 id="hp" style="display:block; margin:3px;"></h1><br>
           <div> 
-            <img src="https://cdn.discordapp.com/attachments/786852021315305473/823554666125983784/Meat_1.gif" style="width:50px; margin:5px;">
-          </div><br>
-          <div> <img src="https://cdn.discordapp.com/attachments/820894723119644672/823580169188671508/MiniTree_1.gif" style="width:50px; margin:5px;"></div>
+            <h1 style="display: inline;"><img src="https://cdn.discordapp.com/attachments/786852021315305473/823554666125983784/Meat_1.gif" style="width:50px; margin:5px; display:inline-block;"><b id="meat_count">: 0</b></h1>
+          </div>
+          <div>
+            <h1 style="display: inline;"><img src="https://cdn.discordapp.com/attachments/820894723119644672/823580169188671508/MiniTree_1.gif" style="width:50px; margin:5px; display:inline-block;"><b id="vegg_count">: 0</b></h1>
+          </div>
+          <br></br>
+          <div id="tips">
+              <p>**กินเนื้อให้น้อยกินผักให้มาก**</p>
+          </div>
         </div>
+
       </body>
 <script src="greenpea.js"></script>
 </html>
